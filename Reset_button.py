@@ -11,17 +11,19 @@ def text_from_enty():
 def refresh():
     label['text'] = "label"
     entry['state'] = 'enabled'
+    entry_string.set('')
 
 window = tk.Tk()
 window.geometry('200x250')
 
 label = ttk.Label(master= window, text = 'label', font= 'Calibri 20')
 
-entry = ttk.Entry(master= window,)
+entry_string = tk.StringVar()
+entry = ttk.Entry(master= window, textvariable= entry_string)
 
-button = ttk.Button(master= window, text = 'button', command= text_from_enty)
+button = ttk.Button(master = window, text = 'button', command= text_from_enty)
 
-back_button = ttk.Button(master= window, text = 'Go to original', command= refresh, bootstyle=(INFO, OUTLINE))
+back_button = ttk.Button(master = window, text = 'Go to original', command= refresh, bootstyle=(INFO, OUTLINE))
 
 label.pack()
 entry.pack(pady=10)
